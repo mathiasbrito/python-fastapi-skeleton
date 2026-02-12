@@ -1,0 +1,6 @@
+fastapi
+websockets
+aiohttp
+uvicorn
+click
+pyaml

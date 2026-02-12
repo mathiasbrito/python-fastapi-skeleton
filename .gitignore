@@ -1,0 +1,25 @@
+.idea
+ssh-keys
+*.egg-info
+data
+.venv
+.env
+__pycache__
+*.pyc!
+.tox
+
+*__local
+
+notebooks
+*.in
+tmp
+http_reqs
+*.ini
+scenarios
+build
+
+# O1 Termianition
+ts_28_532_streaming_data_reporting_service.yml
+
+# macOS
+.DS_Store

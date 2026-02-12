@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools >= 61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "app"
+description = "My python application"
+version = "0.1"
+license = { file = "LICENSE" }
+readme = "README.md"
+authors = [
+    { name = "AUTHOR_NAME", email = "AUTHOR_EMAIL@EXAMPLE.COM" }
+]
+maintainers = [
+    { name = "MAINTAINER NAME", email = "MAINTAINER_EMAIL@EXAMPLE.COM" }
+]
+keywords = []
+classifiers = []
+dependencies = [
+    "fastapi",
+    "websockets",
+    "aiohttp",
+    "uvicorn",
+    "click",
+    "pyaml"
+]
+requires-python = ">= 3.10"
+
+[project.scripts]
+app = "app.main:cli"
+
+[tool.setuptools.package-data]
+app = [ "log_conf.yml" ]
+
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    min_version = 4.0
+    env_list =
+        py310
+
+    [testenv]
+    deps = -r{toxinidir}/tests/requirements.txt
+    commands = pytest tests
+
+    [testenv:type]
+    deps = mypy
+    commands = mypy src
+"""
