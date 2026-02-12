@@ -10,7 +10,7 @@ RUN pip install -r requirements.txt
 RUN pip install .
 
 
-EXPOSE 8070
+EXPOSE 8000
 
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD app

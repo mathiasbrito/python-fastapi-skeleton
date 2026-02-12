@@ -4,3 +4,4 @@
 .vscode
 .code
 .gitignore
+*.egg-info
